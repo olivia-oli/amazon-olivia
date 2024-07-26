@@ -1,0 +1,28 @@
+.product{
+    background-color: #fff;
+    border: 1px solid #000;
+    z-index: 100;
+    padding : 40px;
+}
+.product_rating{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.product_button{
+    background-color: #febd69;
+    padding:15px;
+    cursor: pointer;
+    border: 1px soild #febd69;
+    transition: background-color 0.3s ease,border-color 0.3s ease;
+}
+
+.product_button:hover{
+ background-color: #ffa735;
+ border : 1px soild #777777;
+
+}
+.product img{
+    max-width: 200px;
+}
