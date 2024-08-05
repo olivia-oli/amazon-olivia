@@ -6,7 +6,7 @@ export const ShoppingState = (props) => {
   const initialState = { basket: JSON.parse(localStorage.getItem('basket')) || [], user: null };
   const [state, dispatch] = useReducer(shoppingReducer, initialState);
 
-  
+
   const addToBasket = ({item}) => {
     dispatch({
       type: "ADD_TO_BASKET",
@@ -19,13 +19,10 @@ export const ShoppingState = (props) => {
       payload: user,
     })
   }
-  
+
   // Selectors
   const getBasketTotal = (basket) => {
-    return basket?.reduce((amount, item) => {
-      const price = parseFloat(item?.item?.price?.replace('$', '')?? 0);
-      return amount + (isNaN(price) ? 0 : price);
-    }, 0);
+    return basket?.reduce((amount, item) => item.price + amount, 0);
   };
 
   const removeFromBasket = (item)=>{

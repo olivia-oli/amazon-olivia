@@ -20,8 +20,8 @@ import Payment from "./components/Payment";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import React from "react";
-import firebase from "firebase/compat/app"
-import Orders from "./components/Orders"
+// import firebase from "firebase/compat/app"
+// import Orders from "./components/Orders"
 
 const stripePromise = loadStripe("pk_test_51Pg57MAsGfRwVPYZNeBzdnMCHOVssxgKZ8xcobrH6wpmMKJdybuQWd216lpoKFYeRsepA9bviFk1Z8vw3WeLyXcG00zoE1Q88i ");
 
@@ -58,7 +58,7 @@ const App = () => {
                <Route path="/products/:id" element={<ProductDetails />} /> 
                <Route path="/checkout-product" element={<CheckoutProduct/>}/>
                <Route path="/checkout" element={<Checkout/>}/>
-               <Route path="/payment" element={<PaymentWrapper />}/> */} */}
+               <Route path="/payment" element={<PaymentWrapper />}/> 
                <Route path="*" element={<NotFound />} /> 
              </Routes>
           </main>

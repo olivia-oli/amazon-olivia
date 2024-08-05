@@ -4,9 +4,9 @@ import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import CheckoutProduct from "./CheckoutProduct";
 import { useElements, useStripe, useEffect } from "@stripe/react-stripe-js";
-import axios from './axios';
+import axios from '../axios';
 import CurrencyFormat from "react-currency-format";
-import {db} from './firebase';
+// import {db} from './firebase';
 import { CardElement } from "@stripe/react-stripe-js";
 
 
@@ -29,7 +29,7 @@ const Payment = () => {
     const getClientSecret = async () => {
       const response = await axios({
         method: "POST",
-        url: `/payments/create?total=${getBasketTotal(basket)*100}`
+        url: `/payments/create?total=${(basket)*100}`
       })
       setClientSecret(response.data.clientSecret)
     }
